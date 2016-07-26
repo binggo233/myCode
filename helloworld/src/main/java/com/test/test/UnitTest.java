@@ -4,6 +4,12 @@ import java.io.File;
 import java.util.Hashtable;
 
 import org.junit.Test;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.support.FileSystemXmlApplicationContext;
+import org.springframework.data.redis.connection.RedisConnection;
+import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
+import org.springframework.data.redis.core.RedisTemplate;
 
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.EncodeHintType;
@@ -16,7 +22,7 @@ public class UnitTest {
 	 * @param args
 	 * @throws Exception
 	 */
-	@SuppressWarnings({ "rawtypes", "unchecked" })
+	/*@SuppressWarnings({ "rawtypes", "unchecked" })
 	@Test
 	public static void main(String[] args) throws Exception {
 		String text = "http://www.wehenzhuanye.com";
@@ -32,5 +38,19 @@ public class UnitTest {
 		// Éú³É¶þÎ¬Âë
 		File outputFile = new File("d:" + File.separator + "new.gif");
 		MatrixToImageWriter.writeToFile(bitMatrix, format, outputFile);
+	}*/
+	
+	@SuppressWarnings({ "unused", "rawtypes" })
+	@Test
+	public void testRedis(){
+		
+		ApplicationContext ac = new ClassPathXmlApplicationContext("classpath*:spring-context.xml");
+		RedisTemplate redisTemplate = (RedisTemplate)ac.getBean("redisTemplate");
+		JedisConnectionFactory cf=(JedisConnectionFactory) ac.getBean("connectionFactory");
+		RedisConnection c=cf.getConnection();
+		c.append((2+"").getBytes(), "binggo".getBytes());
+		System.out.println("--------------------");
+		//redisTemplate.
 	}
+	
 }

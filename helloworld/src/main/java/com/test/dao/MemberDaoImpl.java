@@ -76,6 +76,7 @@ public class MemberDaoImpl extends RedisGeneratorDao<String,Member> implements
 	}
 
 	public Member get(final String keyId) {
+		
 		 Member result = redisTemplate.execute(new RedisCallback<Member>() {  
 		      public Member doInRedis(RedisConnection connection)  
 		          throws DataAccessException {  
@@ -92,6 +93,5 @@ public class MemberDaoImpl extends RedisGeneratorDao<String,Member> implements
 		    return result;  
 	  }  
 	
-	 
 
 }

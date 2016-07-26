@@ -34,6 +34,12 @@ public class MemberController {
 	  @RequestMapping(value="/add")
 	  public ModelAndView add(HttpServletRequest request,HttpServletResponse response){
 	    Map<String,Object> map = new HashMap<String, Object>();
+	    
+	    Member member=new Member();
+	    member.setId(1+"");
+	    member.setNickname("dj");
+	    this.memberService.add(member);
+	    
 	    map.put("message", "成功添加数据到库" );
 	    return toView("/member/add", map);
 	  }
@@ -55,9 +61,9 @@ public class MemberController {
 	    return toView("member/message", map);
 	  }*/
 	  
-	  @RequestMapping(value={"/{id:\\d+}/query","/{id:\\d+}/query.html"},method={RequestMethod.GET,RequestMethod.POST})
+	  @RequestMapping(value={"/query","/query.html"},method={RequestMethod.GET,RequestMethod.POST})
 	  public ModelAndView queryMember(HttpServletRequest request,HttpServletResponse response,
-	      @PathVariable("id")String id){
+	     String id){
 	    Map<String,Object> map = new HashMap<String, Object>();
 	    System.out.println(id);
 	    Member member = this.memberService.get(id);
