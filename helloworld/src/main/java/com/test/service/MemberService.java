@@ -5,6 +5,8 @@ import java.util.List;
 import com.test.model.Member;
 
 public interface MemberService {
+
+	
 	 /**
 	   * Ìí¼Ó¶ÔÏó
 	   */

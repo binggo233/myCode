@@ -13,6 +13,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding> 
   </properties>  
   
+  
   <dependencies>
     
     <!-- config junit jar -->
@@ -163,6 +164,33 @@
 	    <version>2.2</version>
 	</dependency>
 	
+	<dependency>
+        <groupId>com.shekhargulati</groupId>
+        <artifactId>strman</artifactId>
+        <version>0.2.0</version>
+    </dependency>
+	<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-io -->
+		<dependency>
+		    <groupId>commons-io</groupId>
+		    <artifactId>commons-io</artifactId>
+		    <version>1.4</version>
+		</dependency>
+		<dependency>
+		    <groupId>net.sf.json-lib</groupId>
+		    <artifactId>json-lib</artifactId>
+		    <classifier>jdk15</classifier>
+		    <version>2.4</version>
+		</dependency>
+	<dependency>
+		<groupId>com.foxinmy</groupId>
+		<artifactId>weixin4j-mp</artifactId>
+		<version>1.7.1</version>
+	</dependency>
+    <dependency>
+        <groupId>com.foxinmy</groupId>
+        <artifactId>weixin4j-server</artifactId>
+        <version>1.1.8</version>
+    </dependency>
 	<!-- 2016年7月26日17:24:38 -->
   </dependencies>
 

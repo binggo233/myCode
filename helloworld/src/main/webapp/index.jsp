@@ -22,7 +22,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <body>
 	<div align="center">
 		<h2>beautiful-girl</h2>
-		<img src="IMG_1036.JPG"/>
+		<img src="/IMG_1036.JPG"/>
 	</div>
 </body>
 </html>
